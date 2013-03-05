@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+
+	
+    <section class="main" role="main">
+    	{% for entry in object_list %}
+    	<h4 class="date_posted">{{ entry.pub_date|date:"b" }}<br/><span>{{ entry.pub_date|date:"dS" }}</span></h4>	    		
+		<article class="blog_post">
+	  		<header class="post_header">
+	  			
+	    		<h3 class="post_title">
+	    			<a href="{{ entry.get_absolute_url }}">{{ entry.head }}</a>
+	    		</h3>
+	    		<h4 class="tags"> {{ entry.tags  }}</h4>
+	    	</header>
+	    	<section class="post_body">
+	    	{% if entry.jump %}
+	    		{{ entry.excerpt_html|safe }}
+	    		<span class="jump"><a href="entry.get_absolute_url">Continue Reading</a></span>
+	    	{% else %}
+	    		{{ entry.body_html|safe }}
+	    	{% endif %}
+	    	   	
+	    	</section>
+	    	
+	    </article>
+	    {% endfor %}
+	  </section> 
+	  
+{% endblock %}	 
+{% block pagination %}  	  
+	    <section class="pagination">
+			<span class="step-links">
+				{% if entry_list.has_previous %}
+					<a href="?page={{entry_list.previous_page_number}}"><img src="http://aidianholder.net/img/prev.png" class="arrows" alt="previous" />previous</a>
+				{% endif %}
+			 
+					<span class="current">
+						Page {{ entry_list.number }} of {{entry_list.paginator.num_pages}}
+					</span>
+			
+				{% if entry_list.has_next %}
+					<a href="?page={{entry_list.next_page_number}}">next<img src="http://aidianholder.net/img/next.png" class="arrows" alt="next" /></a>
+				{% endif %}
+			 
+			</span>
+		</section>
+	
+	    
+{% endblock %}
+
+
+

@@ -1,0 +1,7 @@
+<form action="/sendmessage/" method="post">{% csrf_token %}
+   <ul>
+       {{ contact_form.as_ul }}       
+    </ul>
+   <input type="submit" value="Submit" />
+    
+</form>

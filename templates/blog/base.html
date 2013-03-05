@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Aidian Holder</title>
+  
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
+  
+  <link href='http://fonts.googleapis.com/css?family=Rokkitt:700|Lato|Lato:300i|Lato:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}font/FontAwesome/css/font-awesome.min.css">
+  <!--[if IE 7]>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}font/FontAwesome/css/font-awesome-ie7.min.css">
+  <![endif]-->
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}js/libs/colorbox/colorbox.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+
+    
+  
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame.-->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+ 
+ <div id="wrap"><!--needed for sticky footer-->		
+    <div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span8 offset2 main-nav">
+
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+       
+       
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-left">
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-edit"></i> blog <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/blog/">main</a></li>
+                <li><a href="/blog/archives/">archive</a></li>
+                <li><a href="/blog/categories/">categories</a></li>
+             </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-film"></i> portfolio<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/newscasts/">newscasts</a></li>
+                <li><a href="/projects/">projects</a></li>
+                <li><a href="/interactives/">interactives</a></li>
+              </ul>
+            </li>
+            <li><a href="/resume/"><i class="icon-list"></i> resume</a></li>
+            <li><a href="/contact/"><i class="icon-envelope-alt"></i> contact</a></li>
+            
+          </ul>
+          
+        </div>
+      </div>
+     
+      </div>
+       
+      <!--</div>-->
+
+    </div>
+  </div>
+</div>
+<div class="row" id="social">
+  <div class="container">
+    <div class="row">
+    
+    <div class="span3 offset9">
+
+      <a href="http://www.facebook.com/aidian.holder" class="social-link"><i class="icon-facebook-sign icon-2x"></i></a>
+      <a href="http://www.twiter.com/aidianz" class="social-link"><i class="icon-twitter-sign icon-2x"></i></a>
+      <a href="http://www.github.com/aidianholder" class="social-link"><i class="icon-github-sign icon-2x"></i></a>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+    <section class="container" id="main" role="main">
+    {% load typogrify_tags %}
+    {% block page_title %}   
+
+  {% endblock page_title %}
+    
+    {% block content %}
+    
+    {% endblock content %}
+    
+   
+    {% block pagination %}
+    
+    {% endblock pagination %}
+   
+    
+    </section>
+
+
+  
+   
+  <script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"></script>
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"><\/script>')</script>-->
+  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/bootstrap/bootstrap.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/colorbox/jquery.colorbox-min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/videoloader.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/animate-thumb-title.js"></script>
+
+
+</body>
+</html> 
+    	
+    	
+    
+    
+    
+    
+    
+    

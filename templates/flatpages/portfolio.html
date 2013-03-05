@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Aidian Holder</title>
+  
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
+  
+  <link href='http://fonts.googleapis.com/css?family=Rokkitt:700|Lato|Lato:300i|Lato:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}font/FontAwesome/css/font-awesome.min.css">
+  <!--[if IE 7]>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}font/FontAwesome/css/font-awesome-ie7.min.css">
+  <![endif]-->
+
+  <link rel="stylesheet" href="{{ STATIC_URL }}js/libs/colorbox/colorbox.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+
+    
+  
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame.-->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+ 
+ <div id="wrap"><!--needed for sticky footer-->		
+    <div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span8 offset2 main-nav">
+
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+       
+       
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-left">
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-edit"></i> blog <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/blog/">main</a></li>
+                <li><a href="/blog/archives/">archive</a></li>
+                <li><a href="/blog/categories/">categories</a></li>
+             </ul>
+            </li>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-film"></i> portfolio<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/newscasts/">newscasts</a></li>
+                <li><a href="/projects/">projects</a></li>
+                <li><a href="/interactives/">interactives</a></li>
+              </ul>
+            </li>
+            <li><a href="/resume/" class="active"><i class="icon-list"></i> resume</a></li>
+            <li><a href="/contact/"><i class="icon-envelope-alt"></i> contact</a></li>
+            
+          </ul>
+          
+        </div>
+      </div>
+     
+      </div>
+       
+      <!--</div>-->
+
+    </div>
+  </div>
+</div>
+<div class="row" id="social">
+  <div class="container">
+    <div class="row">
+    
+    <div class="span3 offset9">
+
+      <a href="http://www.facebook.com/aidian.holder" class="social-link"><i class="icon-facebook-sign icon-2x"></i></a>
+      <a href="http://www.twiter.com/aidianz" class="social-link"><i class="icon-twitter-sign icon-2x"></i></a>
+      <a href="http://www.github.com/aidianholder" class="social-link"><i class="icon-github-sign icon-2x"></i></a>
+      
+    </div>
+  </div>
+</div>
+</div>
+   
+    <div class="container" id="main" role="main">
+      <section class="row portfolio">
+        <div class="span3">
+          <h2 class="section-header pull-right">Newscasts</h2>
+          
+        </div>
+      
+        <div class="span9">
+       
+          <ul class="thumbnails">
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/jackson.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                  
+                    <img class="show sprite" src="{{ STATIC_URL }}img/sprite-test.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Remembering MJ</h4>
+                    </span>
+                    
+                  </div>
+                </a>
+            
+              
+            </li>
+            <li class="span3">
+              
+                <a href="{{ STATIC_URL }}video/pages/summer_sizzle.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s2" src="{{ STATIC_URL }}img/sprite-test.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Summer Sizzle</h4>
+                    </span>
+                  </div>
+                </a>
+                
+              
+              
+            </li>
+            <li class="span3">
+            
+                <a class="thumbnail stretchy" href="{{ STATIC_URL }}video/pages/face_off.html">
+                  <div class="img-wrap">
+                  <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s3" src="{{ STATIC_URL }}img/sprite-test.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Final Face-Off</h4>
+                    </span>
+                  </div>
+                </a>
+                
+              
+            </li>
+  
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/midway.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                  <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s4" src="{{ STATIC_URL }}img/sprite-test.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Midway Mayhem</h4>
+                    </span>
+                  </div>
+                
+                </a>
+              
+            </li>
+
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/gas_leak.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                  
+                  <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s5" src="{{ STATIC_URL }}img/sprite-test.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Live, Local &amp; Late-Breaking</h4>
+                    </span>
+                  </div>
+                
+                </a>
+              
+            </li>
+
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/whales.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                  <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s6" src="{{ STATIC_URL }}img/sprite-test.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Saving the Whales</h4>
+                    </span>
+                  </div>
+                
+                </a>
+              
+            </li>
+
+
+            
+
+          </ul>
+
+        </div><!--end span9 for newscasts-->
+        
+
+      </section><!--end portfolio row for newscasts-->
+
+
+     <section class="row portfolio"><!--start projects section-->
+        <div class="span3">
+          <h2 class="section-header pull-right">Projects</h2>
+        </div>
+        <div class="span9"><!--start span9 as container for projects video-->
+          <ul class="thumbnails">
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/ticket-trouble.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite" src="{{ STATIC_URL }}img/project-sprite.jpg">
+                  <span class="play"><i class="icon-play icon-4x"></i></span>
+                  <span class="title">
+                    <h4>Parking Payoff</h4>
+                  </span>
+                  </div>
+                </a>
+              
+            </li>
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/ticket-hotspots.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s2" src="{{ STATIC_URL }}img/projects-sprite.jpg">
+                  <span class="play"><i class="icon-play icon-4x"></i></span>
+                  <span class="title">
+                    <h4>Ticket Hotspots</h4>
+                  </span>
+                  </div>
+
+                </a>
+              
+            </li>
+            <li class="span3">
+              <a href="{{ STATIC_URL }}video/pages/ticket-scofflaws.html" class="thumbnail stretchy">
+                <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s3" src="{{ STATIC_URL }}img/project-sprite.jpg">
+                  <span class="play"><i class="icon-play icon-4x"></i></span>
+                  <span class="title">
+                    <h4>Ticket Scofflaws</h4>
+                  </span>
+                </div>
+
+              </a>
+              
+            </li>
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/fire-response.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s4" src="{{ STATIC_URL }}img/project-sprite.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Response Time</h4>
+                    </span>
+                  </div>
+                </a>             
+            </li>
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/bridge_safety.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s5" src="{{ STATIC_URL }}img/project-sprite.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Bridge Safety</h4>
+                    </span>
+                  </div>
+                </a>             
+            </li>
+            <li class="span3">
+                <a href="{{ STATIC_URL }}video/pages/scary_story.html" class="thumbnail stretchy">
+                  <div class="img-wrap">
+                    <img class="spacer" alt="icon" src="{{ STATIC_URL }}img/spacer.png">
+                    <img class="sprite s6" src="{{ STATIC_URL }}img/project-sprite.jpg">
+                    <span class="play"><i class="icon-play icon-4x"></i></span>
+                    <span class="title">
+                      <h4>Scary Story</h4>
+                    </span>
+                  </div>
+                </a>
+                <a href="#" class="thumbnail">
+                  <img src="{{ STATIC_URL }}img/slates/scary-story-slate.jpg" alt="Scary Story">
+                </a>
+              
+            </li>
+          </ul>
+        </div><!--end span9 for projects-->
+      </section><!--end row for projects-->
+      
+
+
+
+
+
+
+
+
+
+    </div><!--end main container-->
+
+
+  <div id="push"><!--for sticky footer--></div>
+</div><!--end wrap-->
+  <footer id="footer">
+    <div class="container">
+      
+    </div>
+  
+  </footer>
+
+
+   
+  <script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"></script>
+  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"><\/script>')</script>-->
+  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/bootstrap/bootstrap.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/colorbox/jquery.colorbox-min.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/videoloader.js"></script>
+  <script type="text/javascript" src="{{ STATIC_URL }}js/libs/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+  $(".img-wrap").hover(function(){
+    $(this).children(".title").animate({height: '0px'}, 'easeInBounce');
+
+    
+  },
+  function(){
+    $(this).children(".title").animate({ height: '25%'}, 'easeOutBounce');
+    }
+  );
+
+</script>
+  
+
+</body>
+</html>
+
+
+
