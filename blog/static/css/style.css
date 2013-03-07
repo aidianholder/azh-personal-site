@@ -1,4 +1,14 @@
-.post-heading {font-family:'Rokkitt', serif;}
+
+.blog-post 
+  {
+    margin:2em 0;
+  }
+
+.post-heading 
+  {
+    font-family:'Rokkitt', serif;
+
+  }
   
   hgroup.post-heading h2 {margin-bottom: 0; font-weight:'700'; font-size: 36px; }
 
@@ -8,19 +18,22 @@
 
   hgroup.post-heading h3 {
     position: absolute; 
-    top:2em; left:-4em; 
+    top:1em; left:-6em; 
     line-height: 26px; 
-    width:3em; height: 2em; 
-    border-radius: 50%; 
-    text-align: center; 
+    width:3.5em; height: 2.5em; 
+    /*border-radius: 50%; */
+    text-align: center;
+    font-weight: 700; 
     padding: 0.5em 0; 
-    background:#AD0505; 
+    background:#3A87AD;
+    background: rgba(58, 135, 173, 0.6); /*#AD0505;*/
     color: #ffffff;
+    /*opacity: 0.5;*/
     -moz-box-shadow: 5px 5px 5px #333;
     -webkit-box-shadow: 5px 5px 5px #333;
     -o-box-shadow: 5px 5px 5px #333;
     box-shadow: 5px 5px 5px #333; 
-    text-shadow: 2px 2px 2px #333;
+    /*text-shadow: 2px 2px 2px #333;*/
   }
   
   hgroup.post-heading h3 span {display:block; font-size:28px;}

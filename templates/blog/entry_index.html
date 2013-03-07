@@ -43,27 +43,29 @@
 	    <section class="pagination">
 			<!--<span class="step-links">-->
 			<ul class="pager">
-				{% if entry_list.has_previous %}
+				{% if entry_list.has_next %}
+				
 					<li class="previous">
-				{% else %}
-					<li class="previous disabled">
-				{% endif %}	
 					<a href="?page={{entry_list.previous_page_number}}">
+					
+					
 						<!--<img src="{{ STATIC_URL }}img/prev.png" class="arrows" alt="previous" />-->
 						&larr; Older</a>
 					</li>
+				{% endif %}
+
 					<li id="page-number">
 						<span>Page {{ entry_list.number }} of {{entry_list.paginator.num_pages}}</span>
 					</li>
-				{% if entry_list.has_next %}
+
+				{% if entry_list.has_previous %}
 					<li class="next">
-				{% else %}
-					<li class="next disabled">
-				{% endif %}
+				
 					<a href="?page={{entry_list.next_page_number}}" class="">Newer &rarr;
 						<!--<img src="{{ STATIC_URL }}img/next.png" class="arrows" alt="next" />-->
 					</a>
 					</li>
+				{% endif %}
 				
 			</ul>
 		</section>
