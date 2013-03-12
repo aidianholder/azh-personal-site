@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^tiny_mce/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/opt/django-projects/tinymce/jscripts/tiny_mce/' }),
     
-    url(r'blog/', include('azh.blog.urls')),
+    url(r'^blog/', include('azh.blog.urls')),
     url(r'', include('django.contrib.flatpages.urls')),
     
     )

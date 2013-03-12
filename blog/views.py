@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404
 from azh.blog.models import Entry, Category
 from azh.blog.forms import ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger, InvalidPage
+from django.core.mail import send_mail
 
 
 
@@ -55,7 +56,7 @@ def month_archive(request, year, month):
 def category_detail(request, category):
     entries = Entry.objects.all()
     months = Entry.objects.dates('pub_date', 'month', order='DESC')
-    featured_posts = entries.filter(featured=True)
+    #featured_posts = entries.filter(featured=True)
     categories = Category.objects.all()
     entries = entries.filter(category__slug=category)
     paginator = Paginator(entries, 6)
@@ -88,19 +89,30 @@ def entry_detail(request, year, month, day, slug):
                               slug=slug)
     return render_to_response('blog/entry_detail.html', {'page_title':'post', 'entry':entry, 'category_list':categories, 'months':months})
 
-def send_message(request):
+def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            cd = form.cleaned_data
-            sub = cd['subject']
-            msg = cd['message']
-            add = cd['email']
-            print sub, msg, add
-        return HttpResponseRedirect('/contact/thanks/')
+            send_mail(form.cleaned_data['name'], form.cleaned_data['message'], form.cleaned_data['email'], ['aidianholder@yahoo.com', '9165048820@mymetropcs.com'])
+            return HttpResponseRedirect('/success/')
     else:
         form = ContactForm()
-    return render_to_response('contact_form.html', {'form':form})
+    return render_to_response('blog/contact.html', {'form':form}, context_instance=RequestContext(request))
+
+    
+#def send_message(request):
+#    if request.method == 'POST':
+#        form = ContactForm(request.POST)
+#        if form.is_valid():
+#            cd = form.cleaned_data
+#            sub = cd['subject']
+#            msg = cd['message']
+#            add = cd['email']
+#            print sub, msg, add
+#        return HttpResponseRedirect('/contact/thanks/')
+#    else:
+#        form = ContactForm()
+#    return render_to_response('contact_form.html', {'form':form})
 
 def display_meta(request):
     values = request.META.items()

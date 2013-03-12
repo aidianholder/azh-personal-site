@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width">
 
-  <title>Aidian Holder</title>
+  <title>Aidian Holder {% block title %} {% endblock %}</title>
   
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
@@ -93,7 +93,7 @@
     {% block page_title %}   
 
   {% endblock page_title %}
-    
+
     {% block content %}
     
     {% endblock content %}

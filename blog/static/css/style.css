@@ -239,7 +239,7 @@ form.contact {
   margin: 1em 1em 3em 3em;
   padding: 1em; }
 
-.page-header {font-family: 'Rokkitt', serif;}
+/*.page-header {font-family: 'Rokkitt', serif;}*/
 
 .button-wrap {position: relative;}
 
@@ -302,6 +302,8 @@ div.contact-wrap {margin: 3em 0 0;}
                         margin: 5px 0px;}
         span.play {font-size:22px;}
         span.play-test {font-size:22px;}
+
+             
       
       }
 
@@ -310,6 +312,9 @@ div.contact-wrap {margin: 3em 0 0;}
                         margin: 3px 0px;}
         span.play {font-size: 16px;}
         span.play-test {font-size: 16px;}
+
+        ul.contact { font-size:1em;}
+
       }
 
       @media screen and (min-width: 481px) and (max-width: 767px) {
@@ -317,6 +322,10 @@ div.contact-wrap {margin: 3em 0 0;}
                         margin:20px 0px;}
         span.play {font-size: 36px;}
         span.play-test {font-size: 36px;}
+
+        ul.contact li { font-size:1.4em;}
+
+
          #footer {
           margin-left: -20px;
           margin-right: -20px;
@@ -340,6 +349,8 @@ div.contact-wrap {margin: 3em 0 0;}
           float:none;
           border-right:transparent;
         }
+
+        ul.contact li { font-size:1em;}
       }
 
 

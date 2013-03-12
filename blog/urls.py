@@ -1,4 +1,6 @@
 from django.conf.urls.defaults import *
+from django.views.generic.simple import direct_to_template
+from azh.blog.forms import ContactForm
 
 urlpatterns = patterns('azh.blog.views',
                       url(r'^$', 'entries_index', name="index"),
@@ -7,5 +9,6 @@ urlpatterns = patterns('azh.blog.views',
                       url(r'^archives/$', 'full_archive', name="archive"),
 
                       url(r'^category/(?P<category>\D+)/$', 'category_detail', name="category"),
-                      url(r'^sendmessage/$', 'send_message', name="sendmessage"),
+                      url(r'^about/contact/$', 'contact', name="contact"),
+                      url(r'^about/contact/success/$', direct_to_template, {'template': 'blog/contact_success.html', 'extra_context':{'form':ContactForm()}}, name="success"),
                       )
