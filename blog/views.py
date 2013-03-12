@@ -6,6 +6,7 @@ from azh.blog.models import Entry, Category
 from azh.blog.forms import ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger, InvalidPage
 from django.core.mail import send_mail
+from django.db.models import Count
 
 
 
@@ -30,9 +31,6 @@ def full_archive(request):
     months = Entry.objects.dates('pub_date', 'month', order='DESC')
     return render_to_response('blog/posts_archive.html', {'entry_list':entries, 'month_list':months}, context_instance=RequestContext(request))
 
-
-
-
 def month_archive(request, year, month):
     import time, datetime
     entries = Entry.objects.all()
@@ -53,11 +51,17 @@ def month_archive(request, year, month):
         p = paginator.page(paginator.num_pages)
     return render_to_response('blog/entry_index.html', { 'page_title':str(year)+str(month), 'entry_list': p, 'category_list':categories, 'months':months}, context_instance=RequestContext(request))
 
+def category_all(request):
+    category_list = Category.objects.annotate(num_entries=Count('entry'))
+    return render_to_response('blog/categories.html', {'category_list':category_list}, context_instance=RequestContext(request))
+    
+
+
 def category_detail(request, category):
     entries = Entry.objects.all()
-    months = Entry.objects.dates('pub_date', 'month', order='DESC')
+    #months = Entry.objects.dates('pub_date', 'month', order='DESC')
     #featured_posts = entries.filter(featured=True)
-    categories = Category.objects.all()
+    #categories = Category.objects.all()
     entries = entries.filter(category__slug=category)
     paginator = Paginator(entries, 6)
     
@@ -71,15 +75,15 @@ def category_detail(request, category):
     except (EmptyPage, InvalidPage):
         p = paginator.page(paginator.num_pages)
    
-    return render_to_response('blog/entry_index.html', { 'page_title':category, 'entry_list': p, 'featured_list': featured_posts, 'category_list':categories, 'months':months })
+    return render_to_response('blog/entry_index.html', { 'page_title':category, 'entry_list': p }, context_instance=RequestContext(request))
     
     
 
 def entry_detail(request, year, month, day, slug):
     import datetime, time
     entries = Entry.objects.all()
-    months = Entry.objects.dates('pub_date', 'month', order='DESC')
-    categories = Category.objects.all()
+    #months = Entry.objects.dates('pub_date', 'month', order='DESC')
+    #categories = Category.objects.all()
     date_stamp = time.strptime(year+month+day, "%Y%b%d")
     pub_date = datetime.date(*date_stamp[:3])
     entry = get_object_or_404(Entry, 
@@ -87,7 +91,7 @@ def entry_detail(request, year, month, day, slug):
                               pub_date__month=pub_date.month,
                               pub_date__day=pub_date.day,
                               slug=slug)
-    return render_to_response('blog/entry_detail.html', {'page_title':'post', 'entry':entry, 'category_list':categories, 'months':months})
+    return render_to_response('blog/entry_detail.html', {'page_title':'post', 'entry':entry}, context_instance=RequestContext(request))
 
 def contact(request):
     if request.method == 'POST':

@@ -53,13 +53,13 @@
             <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-film"></i> portfolio<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="/newscasts/">newscasts</a></li>
-                <li><a href="/projects/">projects</a></li>
-                <li><a href="/interactives/">interactives</a></li>
+                <li><a href="/portfolio/newscasts/">newscasts</a></li>
+                <li><a href="/portfolio/projects/">projects</a></li>
+                <li><a href="/portfolio/interactives/">interactives</a></li>
               </ul>
             </li>
-            <li><a href="/resume/"><i class="icon-list"></i> resume</a></li>
-            <li><a href="/contact/"><i class="icon-envelope-alt"></i> contact</a></li>
+            <li><a href="/about/resume/"><i class="icon-list"></i> resume</a></li>
+            <li><a href="/about/contact/"><i class="icon-envelope-alt"></i> contact</a></li>
             
           </ul>
           
@@ -82,6 +82,7 @@
       <a href="http://www.facebook.com/aidian.holder" class="social-link"><i class="icon-facebook-sign icon-2x"></i></a>
       <a href="http://www.twiter.com/aidianz" class="social-link"><i class="icon-twitter-sign icon-2x"></i></a>
       <a href="http://www.github.com/aidianholder" class="social-link"><i class="icon-github-sign icon-2x"></i></a>
+      <a href="../feed/" class="social-link"><i class="icon-rss icon-2x"></i></a>
       
     </div>
   </div>
@@ -107,8 +108,33 @@
     </section>
 
 
-  
-   
+    <div id='push'></div>
+  </div><!--end wrap--> 
+
+  <footer id="footer">
+
+    <div class="container">
+      <div class="row">
+        <div class="span4 offset3">
+          <h4>Latest Posts</h4>
+          {% load blog_tags %}
+          <ul class="latest">
+            {% get_latest_entries %}
+            {% for entry in latest_entries %}
+            <li>
+              <a href="{{ entry.get_absolute_url }}">{{ entry.head }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
   <script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"></script>
   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"><\/script>')</script>-->

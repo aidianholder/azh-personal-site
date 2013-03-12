@@ -1,5 +1,5 @@
 from django.contrib.syndication.views import Feed
-from azhsite.blog.models import Entry
+from azh.blog.models import Entry
 
 class LatestEntries(Feed):
     title = "Latest Posts"
@@ -13,7 +13,5 @@ class LatestEntries(Feed):
         return item.head
     
     def item_description(self, item):
-        try:
-            return item.excerpt
-        except:
-            return 'no description available' 
+        return item.body.split('. ')[0]
+        
