@@ -8,5 +8,13 @@ $(document).ready(function(){
 				return width;
 				}
 				});
+			$(".thumbnail-wide").colorbox({width:function(){
+				viewport = $("#main").width();
+				if (viewport > 700) {width = "650"}
+				else if ((viewport < 700) && (viewport >= 480)) {width = "436"}
+				else {width = "242"}
+				return width;
+				}
+				});
 			
 })
