@@ -64,7 +64,8 @@ def category_detail(request, category):
     #categories = Category.objects.all()
     entries = entries.filter(category__slug=category)
     paginator = Paginator(entries, 6)
-    
+    category = Category.objects.get(slug=category)
+    #category_title = category.title
     try:
         page = int(request.GET.get('page', 1))
     except ValueError:
@@ -75,7 +76,7 @@ def category_detail(request, category):
     except (EmptyPage, InvalidPage):
         p = paginator.page(paginator.num_pages)
    
-    return render_to_response('blog/entry_index.html', { 'page_title':category, 'entry_list': p }, context_instance=RequestContext(request))
+    return render_to_response('blog/entry_index.html', { 'category':category, 'entry_list': p }, context_instance=RequestContext(request))
     
     
 

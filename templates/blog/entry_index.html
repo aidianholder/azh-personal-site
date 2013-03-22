@@ -7,7 +7,13 @@
 {% endblock %}
 
 {% block page_title %}
+
+{% if category %}
+<h1 class="page-header">{{ category.title }}</h1>
+{% else %}
 <h1 class="page-header">Blog</h1>
+{% endif %}
+
 {% endblock %}
 
 

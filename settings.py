@@ -130,7 +130,7 @@ INSTALLED_APPS = (
     'south',
     'markdown',
     'azh.blog',
-    #'azh.quotes',
+    'quotes',
     'typogrify',
      )
 
