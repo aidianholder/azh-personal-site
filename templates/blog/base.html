@@ -7,17 +7,19 @@
 
   <title>Aidian Holder {% block title %} {% endblock %}</title>
   
+  {% load compress %}
+  {% compress css %}
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
-  
-  <link href='http://fonts.googleapis.com/css?family=Rokkitt:700|Lato|Lato:300i|Lato:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css"> 
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}font/FontAwesome/css/font-awesome.min.css">
   <!--[if IE 7]>
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}font/FontAwesome/css/font-awesome-ie7.min.css">
   <![endif]-->
-
   <link rel="stylesheet" href="{{ STATIC_URL }}js/libs/colorbox/colorbox.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+  {% endcompress %}
+
+  <link href='http://fonts.googleapis.com/css?family=Rokkitt:700|Lato|Lato:300i|Lato:700' rel='stylesheet' type='text/css'>
 
     
   
@@ -141,6 +143,7 @@
 
         </div>
 
+
       </div>
 
     </div>
@@ -150,11 +153,13 @@
   <script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"></script>
   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"><\/script>')</script>-->
+
+  {% compress js %}
   <script type="text/javascript" src="{{ STATIC_URL }}js/libs/bootstrap/bootstrap.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/libs/colorbox/jquery.colorbox-min.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/videoloader.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/animate-thumb-title.js"></script>
-
+  {% endcompress %}
 
 </body>
 </html> 

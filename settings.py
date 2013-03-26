@@ -76,6 +76,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -132,6 +133,7 @@ INSTALLED_APPS = (
     'azh.blog',
     'quotes',
     'typogrify',
+    'compressor',
      )
 
 SITE_ID = 2
@@ -143,6 +145,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'barryfreed49@gmail.com'
 EMAIL_HOST_PASSWORD = 'Anarchynow1'
 EMAIL_PORT = 587
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
