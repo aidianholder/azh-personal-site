@@ -19,8 +19,7 @@
   <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
   {#{% endcompress %}#}
 
-  <link href='http://fonts.googleapis.com/css?family=Lato|Lato:300i|Lato:700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Rokkitt:700|Lato|Lato:300i|Lato:700' rel='stylesheet' type='text/css'>
 
     
   
@@ -44,31 +43,29 @@
        
        
         <div class="nav-collapse collapse">
-
-
           <ul class="nav pull-left">
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-edit"></i> blog <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/blog/">main</a></li>
+                <li><a href="/blog/archives/">archive</a></li>
+                <li><a href="/blog/categories/">categories</a></li>
 
-
-
-          
-            <li>
-              <a href="/blog/">
-              <i class="icon-edit"></i>
-                blog
-              </a>
+              </ul>
             </li>
-            <li>
-              <a href="/portfolio/video/">
-              <i class="icon-film"></i>
-              portfolio
-              </a>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-film"></i> portfolio<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/portfolio/newscasts/">newscasts</a></li>
+                <li><a href="/portfolio/projects/">projects</a></li>
+                <!--<li><a href="/portfolio/interactives/">interactives</a></li>-->
+              </ul>
             </li>
-            <li>
-              <a href="/about/resume/"><i class="icon-list"></i> resume</a></li>
+            <li><a href="/about/resume/"><i class="icon-list"></i> resume</a></li>
             <li><a href="/about/contact/"><i class="icon-envelope-alt"></i> contact</a></li>
             
-           </ul>
-
+          </ul>
+          
         </div>
       </div>
      
@@ -88,7 +85,7 @@
       <a href="http://www.facebook.com/aidian.holder" class="social-link"><i class="icon-facebook-sign icon-2x"></i></a>
       <a href="http://www.twiter.com/aidianz" class="social-link"><i class="icon-twitter-sign icon-2x"></i></a>
       <a href="http://www.github.com/aidianholder" class="social-link"><i class="icon-github-sign icon-2x"></i></a>
-      <a href="/blog/feed/" class="social-link"><i class="icon-rss icon-2x"></i></a>
+      <a href="../feed/" class="social-link"><i class="icon-rss icon-2x"></i></a>
       
     </div>
   </div>
@@ -114,11 +111,11 @@
     
     {% endblock pagination %}
 
-    <hr/>
-
+    {% include "quote.html" %}
+      {% load quotes_tags %}
+      {% get_quote %}
+      <p>{{ active_quote.quote }}</p>
     </section>
-
-
 
 
     <div id='push'></div>
@@ -128,17 +125,26 @@
 
     <div class="container">
       <div class="row">
+        <div class="span4 offset3">
+          <h4>Latest Posts</h4>
+         {% load blog_tags %}
 
+          
+          <ul class="latest">
+            {% do_latest_entries %}
+            {% for entry in latest_entries %}
+            <li>
+              <a href="{{ entry.get_absolute_url }}">{{ entry.head }}</a>
+            </li>
+            {% endfor %}
+          </ul>
 
+        </div>
+        <div class="span4">
+          <h4>Latest Links</h4>
+          <ul class="latest" id="bookmarks">
 
-        <div class="span9 offset3">
-            {% load quotes_tags %}
-            {% get_quote %}
-            <blockquote class="pull-right">
-            <p>{{ active_quote.quote }}</p>
-            <small>{{active_quote.author}}</small>
-            </blockquote>
-
+          </ul>
 
         </div>
 
