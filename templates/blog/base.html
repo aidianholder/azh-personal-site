@@ -7,8 +7,8 @@
 
   <title>Aidian Holder {% block title %} {% endblock %}</title>
   
-  {% comment %}{% load compress %}
-  {% compress css %}{% endcomment %}
+ {% load compress %}
+  {% compress css %}
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.css"> 
   <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}font/FontAwesome/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
   <![endif]-->
   <link rel="stylesheet" href="{{ STATIC_URL }}js/libs/colorbox/colorbox.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
-  {#{% endcompress %}#}
+  {% endcompress %}
 
   <link href='http://fonts.googleapis.com/css?family=Lato|Lato:300i|Lato:700' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -133,7 +133,8 @@
 
         <div class="span9 offset3">
             {% load quotes_tags %}
-            {% get_quote %}
+            {% get_random_quote %}
+            
             <blockquote class="pull-right">
             <p>{{ active_quote.quote }}</p>
             <small>{{active_quote.author}}</small>
@@ -149,17 +150,19 @@
 
   </footer>
 
+{% load compress %}
+{% compress js %}
   <script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"></script>
   <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery/jquery-1.9.0.min.js"><\/script>')</script>-->
 
-{#{% compress js %}#}
+
   <script type="text/javascript" src="{{ STATIC_URL }}js/libs/bootstrap/bootstrap.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/libs/colorbox/jquery.colorbox-min.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/videoloader.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/animate-thumb-title.js"></script>
   <script type="text/javascript" src="{{ STATIC_URL }}js/getDelicious.js"></script>
-{#{% endcompress %}#}
+{% endcompress %}
 
 </body>
 </html> 

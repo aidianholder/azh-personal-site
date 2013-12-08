@@ -33,7 +33,7 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
@@ -68,6 +68,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     '/opt/azh-env/azh/azh/blog/static/',
+    #'/opt/static/',
 )
 
 # List of finder classes that know how to find static files in
@@ -76,7 +77,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    #'compressor.finders.CompressorFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -133,12 +134,10 @@ INSTALLED_APPS = (
     'azh.blog',
     'quotes',
     'typogrify',
-    #'compressor',
+    'compressor',
      )
 
 SITE_ID = 2
-
-
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -146,8 +145,12 @@ EMAIL_HOST_USER = 'barryfreed49@gmail.com'
 EMAIL_HOST_PASSWORD = 'Anarchynow1'
 EMAIL_PORT = 587
 
-COMPRESS_ENABLED = True
-COMPRESS_OFFLINE = True
+#COMPRESS_ENABLED = True
+#COMPRESS_OFFLINE = True
+#COMPRESS_OFFLINE_MANIFEST = "/opt/static/CACHE/manifest.json"
+#COMPRESS_OFFLINE_CONTEXT = {
+#         'STATIC_URL': '/opt/static/',
+#   }
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

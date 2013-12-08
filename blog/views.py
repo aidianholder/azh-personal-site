@@ -99,7 +99,7 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             send_mail(form.cleaned_data['name'], form.cleaned_data['message'], form.cleaned_data['email'], ['aidianholder@yahoo.com', '9165048820@mymetropcs.com'])
-            return HttpResponseRedirect('/success/')
+            return HttpResponseRedirect('/about/contact/success/')
     else:
         form = ContactForm()
     return render_to_response('blog/contact.html', {'form':form}, context_instance=RequestContext(request))

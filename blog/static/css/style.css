@@ -1,5 +1,5 @@
 
-/*h1.page-header {font-family: 'Lato', sans-serif;}*/
+
 
 .breadcrumb 
   {
@@ -8,6 +8,12 @@
     font-size:10px;
     padding-top: 0px;
   }
+
+h1.page-header
+  {
+    font-family:'Lato', sans-serif;
+  }
+
 
 .blog-post 
   {

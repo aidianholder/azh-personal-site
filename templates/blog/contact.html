@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 
+{% block title %}
+
+| Contact
+
+{% endblock %}
 
 {% block content %}
 
@@ -19,6 +24,7 @@
           </ul>
       </div>
       <div class="span6">
+       
         <form class="contact" action="" method="post">
           {% csrf_token %}
 
