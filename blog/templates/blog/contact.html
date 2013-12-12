@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+| Contact
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="page-header">Contact</h1>
+      
+        
+  <div class="row">
+    <div class="span10 offset2 ">
+      <!--<h1 class="page-heading">Contact</h1>-->
+      <div class="span3">
+        <ul class="contact">
+          <li><i class="icon-phone icon-big"></i><span >916.504.8820</span></li>
+            <li><a href="mailto:aidian@aidianholder.net&amp;cc=9165048820@mymetropcs.com"><i class="icon-envelope icon-big" ></i><span>aidian@aidianholder.net</span></li>
+            <li><a href="http://www.twiter.com/aidianz"><i class="icon-twitter icon-big"></i><span >@aidianz</span></a></li>
+            <li><a href="http://www.facebook.com/aidian.holder"><i class="icon-facebook icon-big"></i><span >aidian.holder</span></a></li>
+            <li><a href="http://www.github.com/aidianholder"><i class="icon-github icon-big"></i><span >aidianholder</span> </a></li>
+          </ul>
+      </div>
+      <div class="span6">
+       
+        <form class="contact" action="" method="post">
+          {% csrf_token %}
+
+          {% for field in form %}
+            {{ field.errors }}
+            {{ field }}
+          {% endfor %}
+
+              <div class="button-wrap">
+                <button type="submit" >Send</button>
+              </div>
+              
+        </form>
+      </div>
+    </div>
+  </div><!--end row-->
+
+
+      
+      
+{% endblock %}
+    
+    

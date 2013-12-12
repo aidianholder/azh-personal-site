@@ -1,5 +1,5 @@
 from django.contrib import admin
-from azh.blog.models import Category, Entry
+from blog.models import Category, Entry
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ['title']}

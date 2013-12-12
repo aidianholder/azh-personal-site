@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+	| Archive
+
+{% endblock %}
+
+{% block page_title %}
+<h1 class="page-header">Archive</h1>
+
+<ul class="breadcrumb">
+	<li><a href="/blog/">main</a><span class="divider">/</span></li>
+	<li class="active">archive<span class="divider">/</span></li>
+	<li><a href="/blog/categories/">categories</a></li>
+</ul>
+
+{% endblock %}
+
+{% block content %}
+	
+	<div class="row">
+		<section class="span6 offset3 blog-content">
+
+			
+				{% for entry in entry_list %}
+
+
+
+					{% ifchanged %}
+						<h3 class="archive">{{ entry.pub_date|date:"Y"}}</h3><ul class="archive">
+					{% endifchanged %}
+
+
+						<li><a href="{{ entry.get_absolute_url }}">{{ entry.head }}</a><span>{{ entry.pub_date|date:"N j" }}<span></li>
+
+			
+
+				{% endfor %}
+
+				</ul>
+
+			
+
+
+				
+		</section>
+	</div>
+
+{% endblock %}

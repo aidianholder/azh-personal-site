@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+	| Blog
+
+{% endblock %}
+
+{% block page_title %}
+
+{% if category %}
+<h1 class="page-header">{{ category.title }}</h1>
+
+<ul class="breadcrumb">
+	<li><a href="/blog/">blog<span class="divider">/</span></li>
+	<li><a href="/blog/archives/">archive</a><span class="divider">/</span></li>
+	<li><a href="/blog/categories/">categories</a></li>
+</ul>
+
+
+{% else %}
+
+<h1 class="page-header">Blog</h1>
+
+<ul class="breadcrumb">
+	<li class="active">blog<span class="divider">/</span></li>
+	<li><a href="archives/">archive</a><span class="divider">/</span></li>
+	<li><a href="categories/">categories</a></li>
+</ul>
+
+{% endif %}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+
+	
+    
+    	<div class="row">
+    		<section class="span6 offset3 blog-content">
+    		{% for entry in entry_list.object_list %}
+    			<article class="blog-post">
+    				<header>
+	  					<hgroup class="post-heading">
+	  						<h2><a href="{{ entry.get_absolute_url }}">{{ entry.head }}</a></h2>
+	  						<h3>{{ entry.pub_date|date:"b"}}<span>{{ entry.pub_date|date:"dS" }}</span></h3>
+	  					</hgroup>
+	  				</header>
+
+	  				{{ entry.body_html|safe }}
+	  			
+	    			<footer>
+	    				<h5> posted in:  
+	    								{% for category in entry.category.all %}
+	    									<a href="{{ category.get_absolute_url }}"><span class="label label-info">{{ category.title }}</span></a>
+	    								{% if forloop.last %}{% else %},{% endif %}
+	    								{% endfor %} 
+	    				</h5>
+	    			</footer>
+	    		</article>
+	    	{% endfor %}
+	  		</section>
+	  	</div>
+
+
+{% endblock %}
+
+{% block pagination %}  
+	  
+	  <div clas="row">
+	  	<div class="span4 offset4">
+	    <section class="pagination">
+			<!--<span class="step-links">-->
+			<ul class="pager">
+				{% if entry_list.has_next %}
+				
+					<li class="previous">
+					<a href="?page={{entry_list.previous_page_number}}">
+					
+					
+						<!--<img src="{{ STATIC_URL }}img/prev.png" class="arrows" alt="previous" />-->
+						&larr; Older</a>
+					</li>
+				{% endif %}
+
+					<li id="page-number">
+						<span>Page {{ entry_list.number }} of {{entry_list.paginator.num_pages}}</span>
+					</li>
+
+				{% if entry_list.has_previous %}
+					<li class="next">
+				
+					<a href="?page={{entry_list.next_page_number}}" class="">Newer &rarr;
+						<!--<img src="{{ STATIC_URL }}img/next.png" class="arrows" alt="next" />-->
+					</a>
+					</li>
+				{% endif %}
+				
+			</ul>
+		</section>
+		</div>
+	</div>
+	    
+{% endblock %}
+
+
+

@@ -1,0 +1,5 @@
+#ignore .pyc and temp files
+*.pyc
+*~
+/static/video/
+!/static/video/pages/

@@ -1,9 +1,9 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
-from azh.blog.forms import ContactForm
-from azh.blog.feeds import LatestEntries
+from blog.forms import ContactForm
+from blog.feeds import LatestEntries
 
-urlpatterns = patterns('azh.blog.views',
+urlpatterns = patterns('blog.views',
                       url(r'^$', 'entries_index', name="index"),
                       url(r'^(?P<year>\d{4})/(?P<month>\w{3})/(?P<day>\d{2})/(?P<slug>\D+)/$', 'entry_detail', name="post"),
                       url(r'^(?P<year>\d{4})/(?P<month>\w{3})/$', 'month_archive', name="month-archive"),

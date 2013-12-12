@@ -2,8 +2,8 @@ from django.shortcuts import render_to_response
 from django.template import Context, loader, RequestContext
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
-from azh.blog.models import Entry, Category
-from azh.blog.forms import ContactForm
+from blog.models import Entry, Category
+from blog.forms import ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger, InvalidPage
 from django.core.mail import send_mail
 from django.db.models import Count

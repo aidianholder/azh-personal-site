@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/static/js/libs/video-js/video-js.css" type="text/css" media="screen" title="Video JS" charset="utf-8">
+<script src="/static/js/libs/video-js/video.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    _V_.options.flash.swf = "/static/js/libs/video-js/video-js.swf"
+
+</script>
+
+    <video id="video" class="video-js vjs-default-skin" width="480" height="360" controls preload="auto" poster="/static/img/slates/midway-mayhem-slate.jpg" data-setup="{}" >
+        <source src="/static/video/shows/mp4/midway_mayhem_4x3_480.mp4" type='video/mp4'>
+        <source src="/static/video/shows/webm/midway_mayhem_4x3_480.webm" type='video/webm' >
+    </video>
+
+<script type="text/javascript">
+$(document).ready(function(){
+			var viewport = $("#main").width();
+			if (viewport > 600) {$("#video").width("480").height("360")}
+			else if ((viewport < 600) && (viewport >= 480)) {$("#video").width("320").height("240")}
+			else {$("#video").width("240").height("180")}
+			}
+		);
+</script>
+   
+  
+

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+		<div class="row">
+    		<section class="span6 offset3 blog-content">
+    			<article class="blog_post">
+    				<header>
+	  					<hgroup class="post-heading">
+	  						<h2><a href="{{ entry.get_absolute_url }}">{{ entry.head }}</a></h2>
+	  						<h3>{{ entry.pub_date|date:"b"}}<span>
+	  							{{ entry.pub_date|date:"dS" }}</span></h3>
+	  					</hgroup>
+	  				</header>
+	  				
+	  				{{ entry.body_html|safe }}
+	  			
+	    			<footer>
+	    				<h5> posted in:  
+	    								{% for category in entry.category.all %}
+	    									<a href="{{ category.get_absolute_url }}"><span class="label label-info">{{ category.title }}</span></a>
+	    								{% if forloop.last %}{% else %},{% endif %}
+	    								{% endfor %} 
+	    				</h5>
+	    			</footer>
+	    		</article>
+	    	</section>
+	  	</div>
+	
+{% endblock %}
+
+
+
