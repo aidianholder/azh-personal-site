@@ -963,7 +963,8 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: "Open-Sans", sans-serif;
 }
 
 label {
@@ -4319,7 +4320,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open-Sans", sans-serif /*"Helvetica Neue", Helvetica, Arial, sans-serif;*/;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;

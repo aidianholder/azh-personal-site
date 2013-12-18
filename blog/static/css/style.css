@@ -9,11 +9,11 @@
     padding-top: 0px;
   }
 
-h1.page-header
+/*h1.page-header
   {
     font-family:'Lato', sans-serif;
   }
-
+*/
 
 .blog-post 
   {
@@ -25,12 +25,12 @@ h1.page-header
       line-height: 22px;
     }
 
-.post-heading 
+/*.post-heading 
   {
     font-family:'Lato', sans-serif;
 
   }
-  
+ */ 
   hgroup.post-heading h2 {margin-bottom: 0; font-weight:'600';}
 
   .post-heading h2 a {color:#333333; text-decoration: none;}
@@ -59,7 +59,7 @@ h1.page-header
   
   hgroup.post-heading h3 span {display:block; font-size:28px;}
 
- h5 {font-family: 'Lato', sans-serif;}
+/* h5 {font-family: 'Lato', sans-serif;}*/
   
   /*.nav-center {width: 70%; margin: 0 auto;}*/
 
@@ -67,11 +67,11 @@ h1.page-header
   .align-right {text-align: right;}
   .border-right {border-right:3px solid #333333; padding: 10px 10px 30px 0;}
   .rokkitt {font-family:'Rokkitt', serif; font-weight: 700;}
-  .Lato {font-family: 'Lato', sans-serif;}
+  /*.Lato {font-family: 'Lato', sans-serif;}*/
   .bold {font-style:'bold';}
   .push-down {padding: 20px 0;}/*
   
-  .blog-content {font-family:'Lato', sans-serif;}
+/*  .blog-content {font-family:'Lato', sans-serif;}*/
   .blog-post {position:relative; margin:1em 0;}
 
   .main-nav {position: relative;}
@@ -103,15 +103,15 @@ h1.page-header
 
 
   article.job {margin: 20px 0;}
-  .job h4 {font-weight:400; font-family: 'Lato', sans-serif;}
+  .job h4 {font-weight:400; /*font-family: 'Lato', sans-serif;*/}
   .job h5, h4 {margin:0;}
-  .job h5 {font-family:'Lato', sans-serif; font-weight:300; font-style: italic;font-size: 12px; line-height: 14px; /*width:100%; background-color: #333333; color:#ffffff; padding:2px; margin: 5px 0;*/}
+  .job h5 {/*font-family:'Lato', sans-serif;*/ font-weight:300; font-style: italic;font-size: 12px; line-height: 14px; /*width:100%; background-color: #333333; color:#ffffff; padding:2px; margin: 5px 0;*/}
   .education {margin:20px 0 20px 30px;}
-  .education h3, h4 {font-family: 'Lato', sans-serif;}
+  /*.education h3, h4 {font-family: 'Lato', sans-serif;}*/
   .education h3 {margin:0; font-size: 18px; line-height: 20px; font-weight:400;}
   .education h4 {margin:0; font-size:14px; font-style: italic; font-weight:300;}
   .education p {line-height: 22px;}
-  .section-header {font-family: 'Lato', sans-serif; font-weight:400; padding: 10px 20px 40px 0; margin-top: 20px; border-right:1px solid #333333; float:right;}
+  .section-header {/*font-family: 'Lato', sans-serif;*/ font-weight:400; padding: 10px 20px 40px 0; margin-top: 20px; border-right:1px solid #333333; float:right;}
 
   .portfolio {margin-top:20px;}
 /*center pagination page number*/
