@@ -67,7 +67,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/opt/azh-env/aidianholder.com/blog/static/',
+    '/opt/aidianholder.com-env/aidianholder.com/blog/static/',
     #'/opt/static/',
 )
 
@@ -97,6 +97,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',    
+    'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -110,10 +111,10 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/opt/azh-env/aidianholder.com/templates",
-    "/opt/azh-env/aidianholder.com/blog/templates/blog",
-    "/opt/azh-env/aidianholder.com/templates/flatpages",
-    "/opt/azh-env/aidianholder.com/quotes/templates/quotes/quote.html",
+    "/opt/aidianholder.com-env/aidianholder.com/templates",
+    "/opt/aidianholder.com-env/aidianholder.com/blog/templates/blog",
+    "/opt/aidianholder.com-env/aidianholder.com/templates/flatpages",
+    "/opt/aidianholder.com-env/aidianholder.com/quotes/templates/quotes/quote.html",
     
     )
 
@@ -129,7 +130,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
      'django.contrib.flatpages',
-    'south',
+     'django.contrib.redirects',    
+     'south',
     'markdown',
     'blog',
     'quotes',
@@ -137,15 +139,13 @@ INSTALLED_APPS = (
     'compressor',
      )
 
-SITE_ID = 2
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'barryfreed49@gmail.com'
 EMAIL_HOST_PASSWORD = 'Anarchynow1'
 EMAIL_PORT = 587
 
-#COMPRESS_ENABLED = True
+COMPRESS_ENABLED = True
 #COMPRESS_OFFLINE = True
 #COMPRESS_OFFLINE_MANIFEST = "/opt/static/CACHE/manifest.json"
 #COMPRESS_OFFLINE_CONTEXT = {
