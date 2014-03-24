@@ -50,10 +50,10 @@
     background: rgba(58, 135, 173, 0.6); /*#AD0505;*/
     color: #ffffff;
     /*opacity: 0.5;*/
-    -moz-box-shadow: 5px 5px 5px #333;
+    /*-moz-box-shadow: 5px 5px 5px #333;
     -webkit-box-shadow: 5px 5px 5px #333;
     -o-box-shadow: 5px 5px 5px #333;
-    box-shadow: 5px 5px 5px #333; 
+    box-shadow: 5px 5px 5px #333;*/ 
     /*text-shadow: 2px 2px 2px #333;*/
   }
   
